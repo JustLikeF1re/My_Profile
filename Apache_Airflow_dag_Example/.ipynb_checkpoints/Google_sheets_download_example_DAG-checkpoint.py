@@ -81,62 +81,56 @@ def m_pid_sub_base_list_updater():
     def query_bi_users_maker(data):
         query = f"""
         SELECT
-                    partner_id_final AS partner_id,
-                    CASE 
-                            WHEN project_id = 1 THEN 'Mos' 
-                            WHEN project_id = 2 THEN 'Be'
-                            WHEN project_id = 4 THEN 'Ba'
-                        ELSE 'Vi' 
-                    END AS project_id,
-                    sub1 AS sub_id,
-                    'sub1' AS sub_type,
-                    MAX(reg_date) AS max_reg_date,
-                    MAX(fd_date) AS max_fd_date
-            FROM bi.users
-                WHERE partner_id_final IN ({data["sub1"]}) 
-                GROUP BY partner_id_final, 
-                         project_id, 
-                         sub1
+            partner_id_final AS partner_id,
+            CASE 
+            WHEN project_id = 1 THEN 'Mos' 
+            WHEN project_id = 2 THEN 'Be'
+            WHEN project_id = 4 THEN 'Ba'
+            ELSE 'Vi' 
+        END AS project_id,
+            sub1 AS sub_id,
+            'sub1' AS sub_type,
+            MAX(reg_date) AS max_reg_date,
+            MAX(fd_date) AS max_fd_date
+        FROM bi.users
+        WHERE partner_id_final IN ({data["sub1"]}) 
+        GROUP BY partner_id_final, project_id, sub1
         
         UNION ALL
         
         SELECT
-                    partner_id_final AS partner_id,
-                    CASE 
-                            WHEN project_id = 1 THEN 'Mos' 
-                            WHEN project_id = 2 THEN 'Be'
-                            WHEN project_id = 4 THEN 'Ba'
-                        ELSE 'Vi' 
-                    END AS project_id,
-                    sub2 AS sub_id,
-                    'sub2' AS sub_type,
-                    MAX(reg_date) AS max_reg_date,
-                    MAX(fd_date) AS max_fd_date
-            FROM bi.users
-                WHERE partner_id_final IN ({data["sub2"]}) 
-                GROUP BY partner_id_final, 
-                         project_id, 
-                         sub2
+            partner_id_final AS partner_id,
+            CASE 
+            WHEN project_id = 1 THEN 'Mos' 
+            WHEN project_id = 2 THEN 'Be'
+            WHEN project_id = 4 THEN 'Ba'
+            ELSE 'Vi' 
+        END AS project_id,
+            sub2 AS sub_id,
+            'sub2' AS sub_type,
+            MAX(reg_date) AS max_reg_date,
+            MAX(fd_date) AS max_fd_date
+        FROM bi.users
+        WHERE partner_id_final IN ({data["sub2"]}) 
+        GROUP BY partner_id_final, project_id, sub2
         
         UNION ALL
         
         SELECT
-                    partner_id_final AS partner_id,
-                    CASE 
-                            WHEN project_id = 1 THEN 'Mos' 
-                            WHEN project_id = 2 THEN 'Be'
-                            WHEN project_id = 4 THEN 'Ba'
-                        ELSE 'Vi' 
-                    END AS project_id,
-                    sub3 AS sub_id,
-                    'sub3' AS sub_type,
-                    MAX(reg_date) AS max_reg_date,
-                    MAX(fd_date) AS max_fd_date
-            FROM bi.users
-                WHERE partner_id_final IN ({data["sub3"]}) 
-                GROUP BY partner_id_final, 
-                         project_id, 
-                         sub3
+            partner_id_final AS partner_id,
+            CASE 
+            WHEN project_id = 1 THEN 'Mos' 
+            WHEN project_id = 2 THEN 'Be'
+            WHEN project_id = 4 THEN 'Ba'
+            ELSE 'Vi' 
+        END AS project_id,
+            sub3 AS sub_id,
+            'sub3' AS sub_type,
+            MAX(reg_date) AS max_reg_date,
+            MAX(fd_date) AS max_fd_date
+        FROM bi.users
+        WHERE partner_id_final IN ({data["sub3"]}) 
+        GROUP BY partner_id_final, project_id, sub3
         """
         
         return query
@@ -158,66 +152,56 @@ def m_pid_sub_base_list_updater():
     @task # Задача для формирования запроса с данными 2
     def query_m_partner_maker(data, last_sunday_str):
         query = f"""
-        
-        SELECT 
-                    partner_id ,
-                    CASE 
-                            WHEN project_id = 1 THEN 'Mos' 
-                            WHEN project_id = 2 THEN 'Be'
-                            WHEN project_id = 4 THEN 'Ba'
-                        ELSE 'Vi' 
-                    END AS project_id,
-                    sub1 AS sub_id,
-                    'sub1' AS sub_type,
-                    min(registration_date) AS max_reg_date,
-                    toDateTime('1970-01-01 03:00:00') AS max_fd_date
-            FROM m_partner.statistics
+                SELECT partner_id ,
+                CASE 
+                    WHEN project_id = 1 THEN 'Mos' 
+                    WHEN project_id = 2 THEN 'Be'
+                    WHEN project_id = 4 THEN 'Ba'
+                    ELSE 'Vi' 
+                END AS project_id,
+                sub1 AS sub_id,
+                'sub1' AS sub_type,
+                min(registration_date) AS max_reg_date,
+                toDateTime('1970-01-01 03:00:00') AS max_fd_date
+                FROM m_partner.statistics
                 WHERE partner_id IN ({data["sub1"]}) 
-                GROUP BY partner_id, 
-                         project_id, 
-                         sub1
+                GROUP BY partner_id, project_id, sub1
                 HAVING MIN(registration_date) > '{last_sunday_str}'
                 
                 UNION ALL
                 
-        SELECT 
-                    partner_id ,
-                    CASE 
-                            WHEN project_id = 1 THEN 'Mos' 
-                            WHEN project_id = 2 THEN 'Be'
-                            WHEN project_id = 4 THEN 'Ba'
-                        ELSE 'Vi' 
-                    END AS project_id,
-                    sub2 AS sub_id,
-                    'sub2' AS sub_type,
-                    min(registration_date) AS max_reg_date,
-                    toDateTime('1970-01-01 03:00:00') AS max_fd_date
-            FROM m_partner.statistics
+                SELECT partner_id ,
+                CASE 
+                    WHEN project_id = 1 THEN 'Mos' 
+                    WHEN project_id = 2 THEN 'Be'
+                    WHEN project_id = 4 THEN 'Ba'
+                    ELSE 'Vi' 
+                END AS project_id,
+                sub2 AS sub_id,
+                'sub2' AS sub_type,
+                min(registration_date) AS max_reg_date,
+                toDateTime('1970-01-01 03:00:00') AS max_fd_date
+                FROM m_partner.statistics
                 WHERE partner_id IN ({data["sub2"]}) 
-                GROUP BY partner_id, 
-                         project_id, 
-                         sub2
+                GROUP BY partner_id, project_id, sub2
                 HAVING MIN(registration_date) > '{last_sunday_str}'
                 
                 UNION ALL
                 
-        SELECT 
-                    partner_id ,
-                    CASE 
-                            WHEN project_id = 1 THEN 'Mos' 
-                            WHEN project_id = 2 THEN 'Be'
-                            WHEN project_id = 4 THEN 'Ba'
-                        ELSE 'Vi' 
-                    END AS project_id,
-                    sub3 AS sub_id,
-                    'sub3' AS sub_type,
-                    min(registration_date) AS max_reg_date,
-                    toDateTime('1970-01-01 03:00:00') AS max_fd_date
-            FROM m_partner.statistics
+                SELECT partner_id ,
+                CASE 
+                    WHEN project_id = 1 THEN 'Mos' 
+                    WHEN project_id = 2 THEN 'Be'
+                    WHEN project_id = 4 THEN 'Ba'
+                    ELSE 'Vi' 
+                END AS project_id,
+                sub3 AS sub_id,
+                'sub3' AS sub_type,
+                min(registration_date) AS max_reg_date,
+                toDateTime('1970-01-01 03:00:00') AS max_fd_date
+                FROM m_partner.statistics
                 WHERE partner_id IN ({data["sub3"]}) 
-                GROUP BY partner_id, 
-                         project_id, 
-                         sub3
+                GROUP BY partner_id, project_id, sub3
                 HAVING MIN(registration_date) > '{last_sunday_str}'
         """
         
