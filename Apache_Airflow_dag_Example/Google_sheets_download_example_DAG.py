@@ -1,8 +1,17 @@
+### --- Импорт библиотек ---
+
+# === Стандартная библиотека ===
+import requests
+
+# === Работа с временем и датами ===
 import pendulum
+
+# === Airflow ===
 from airflow import DAG
 from airflow.decorators import dag, task
 from airflow.hooks.base_hook import BaseHook
-import requests
+
+### --- --- ###
 
 # Владелец
 default_args = {

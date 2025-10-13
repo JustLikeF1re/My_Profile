@@ -1,22 +1,39 @@
+### --- Импорт библиотек ---
+
+# === Стандартная библиотека ===
 import os
 import asyncio
 import logging
 from datetime import datetime
 from io import StringIO
 
+# === Аналитика и обработка данных ===
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+
+# === Работа с изображениями ===
 from PIL import Image
 
+# === Телеграм-бот (Aiogram) ===
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
 
+# === Работа с базами данных ===
 import clickhouse_connect
 
-from Config_file import TOKEN, ALLOWED_USERS, creds_user, creds_password, file_path
+# === Пользовательские настройки и конфигурация ===
+from Config_file import (
+    TOKEN,
+    ALLOWED_USERS,
+    creds_user,
+    creds_password,
+    file_path
+)
 
+
+### --- --- ###
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
