@@ -4,6 +4,9 @@
 
 | File | Description |
 |:------|:----------|
-| **[Google_sheets_download_example_DAG.py](Google_sheets_download_example_DAG.py)** | An example of a simple DAG for weekly updating of the "base" sheet in a Google Sheets file. The process includes a Telegram bot notification confirming the update. Based on the data collected and uploaded through this process, further operations—such as updating other sheets, pivot tables, or dashboards—can be performed automatically within the same document. |
+| **[Classification_Example](Classification_Example/)** | Completed projects on classification tasks (predicting object classes). |
+| **[Regression_Example](Regression_Example/)** | Projects on regression tasks (predicting an exact numerical value for each observation). |
+| **[Временные_ряды](Временные_ряды/)** | Project on time series. |
 
+>ℹ️ (Examples of my Kaggle work and pet projects, organized into folders with clear names).
 ---
