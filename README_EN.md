@@ -42,4 +42,4 @@ This repository serves as a **portfolio** showcasing:
 
 ## 📫 Contact
 
-If you'd like to discuss my projects or potential collaboration — feel free to reach out: [Click](https://github.com/JustLikeF1re)
+If you'd like to discuss my projects or potential collaboration — feel free to reach out: [**Click**](https://github.com/JustLikeF1re)
