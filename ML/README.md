@@ -4,7 +4,7 @@
 
 | Папка | Описание |
 |:------|:----------|
-| **[Classification_Example](./ML/Classification_Example/)** | Завершенные проекты по задачам классификации (определение классов объектов). |
-| **[Classification_Example](./ML/Classification_Example/)** | Завершенные проекты по задачам классификации (определение классов объектов). |
+| **[Classification_Example](ML/Classification_Example/)** | Завершенные проекты по задачам классификации (определение классов объектов). |
+| **[Classification_Example](ML/Classification_Example/)** | Завершенные проекты по задачам классификации (определение классов объектов). |
 
 ---
