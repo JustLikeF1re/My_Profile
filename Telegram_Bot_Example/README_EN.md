@@ -4,9 +4,6 @@
 
 | File | Description |
 |------|------------|
-| **[My_Dessition.ipynb](My_Dessition.ipynb)** | Forecast the average daily electricity prices for the “Europe” central zone for the next month (30 days). |
-
-ℹ️ This pet project is too large to display correctly on GitHub, so here is a link to the version in Google Colab: [**Open in Colab**](https://colab.research.google.com/drive/13vSFkYFhXy7hLD8jwHLD1cSb4ueSvLn6)
-
+| **[Telegram_ad_hoc_bot_example.py](Telegram_ad_hoc_bot_example.py)** | Example of an interactive Telegram bot that automates part of regular analytics. The bot provides users with access to relevant and fully calculated information about specific product partners — by selected regions or by PID across all regions. In response to an employee’s message in the chat, the bot sends an image with the calculated metrics and additionally summarizes them in the following message.<br>*ℹ️ Due to NDA restrictions, it is not possible to provide a live example of the bot’s operation, including screenshots or images.* |
 
 ---
