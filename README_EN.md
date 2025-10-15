@@ -2,24 +2,24 @@
 
 # 👋 Welcome to My Portfolio Repository
 
-> This repository contains examples of my work in data analytics, automation, machine learning, and Telegram bot development.
+> Here you’ll find examples of my work in data analytics, automation, machine learning, and Telegram bot development, as well as my planned directions for further professional growth.
 
 ---
 
-## 📘 Repository Navigation
+## 📘 Navigation:
 
-Files **Read_me(EN).txt** and **Read_me(RU).txt** will help you navigate through each folder.
+Files **README_EN.md** and **README.md** will help you navigate through each folder.
 
-- **Read_me(EN).txt** — English version of the description (the file you are currently reading) 
+- **README_EN.md** — English version of the description (the file you are currently reading) 
   > Please excuse any possible grammar mistakes — I occasionally use Google Translate 😊
 
-- **Read_me(RU).txt** — Russian version
+- **RREADME.md** — Russian version
 
 Choose whichever language you prefer!
 
 ---
 
-## 🗂️ Repository Structure
+## 🗂️ Repository Structure:
 
 | Folder | Description |
 |:-------|:-------------|
@@ -31,12 +31,12 @@ Choose whichever language you prefer!
 
 ---
 
-## 🧭 About This Repository
+## 🧭 About This Repository:
 
 This repository serves as a **portfolio** showcasing:
-- my skills in working with data, Python, SQL, Airflow, and ML;
-- my approach to structuring projects and writing clean, maintainable code;
-- examples of real or realistic data-related tasks.
+- My skills in working with data, Python, SQL, Airflow, and ML;
+- My approach to structuring projects and writing clean, maintainable code;
+- Examples of real or realistic data-related tasks.
 
 ---
 
